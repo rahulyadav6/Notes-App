@@ -44,6 +44,7 @@ const LoginPage = () => {
                 }
             } else {
                 console.log("Signing up with", userData);
+             
                 const res = await axios.post(`${USER_URL}/signup`, userData); // Use the appropriate signup URL
                 if (res.data) {
                     toast.success("Signup Successfully!", { position: "top-center" });
@@ -51,7 +52,7 @@ const LoginPage = () => {
                 }
             }
         } catch (error) {
-            console.error(error.message);
+            console.error(error);
             toast.error(`Operation failed, Error: ${error.message}`, { position: "top-center" });
         }
     };

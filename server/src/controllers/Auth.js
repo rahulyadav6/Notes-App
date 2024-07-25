@@ -17,7 +17,7 @@ exports.signup = async (req, res) => {
         }
 
         // Password validation
-        if (password.length !== 6) {
+        if (password.length < 6) {
             return res.status(400).json({
                 success: false,
                 message: "Please enter a valid password (6 characters)"
